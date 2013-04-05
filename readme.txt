@@ -1,4 +1,4 @@
-Python modules for finance£º
+Python modules for finance:
 
 -------------2013-04-05---
 root:app_finance
