@@ -28,8 +28,6 @@ class income_tex:
                 return data
             elif type(data) is types.FloatType:
                 return data
-            elif type(data) is types.LongType:
-                return data
             elif type(data) is types.ComplexType:
                 return data
             else:
@@ -82,6 +80,8 @@ class income_tex:
     #ys 已发月数，yk 每月可税前扣除的部分(三险一金总额)，yf2 年终奖发放当月的月薪（已减可扣除部分）  
     #由于实际当年的年终奖发放是在次年的1月或者2月（农历过年前），年终奖发放月的月薪按照次年1月或者2月的月薪作为参考
     #同样对于当年做税收筹划时，也是在当年的1月或者2月，所以可能已经发放1-2个月工资，实际筹划月份为10-11个月     
+    #说明一下应扣除数的问题，一般而言主要为三险一金，理论上三险一金是税前工资总额的比例数，但实务上每个地区的比率和征收方式各有千秋
+    #一般而言是按照去年平均工资作为扣除基数，并非按照本年的应发工资，杭州地区为7月份统一调整本年的扣除基数    
     def bptr(self,tic,yf1,ys,yk,yf2): 
         ctic=self.numbercheck(tic)
         cyf1=self.numbercheck(yf1)
